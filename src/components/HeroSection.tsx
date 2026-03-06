@@ -7,10 +7,10 @@ const HeroSection = () => (
         Scuola Calcio
       </p>
       <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-primary-foreground leading-none mb-2">
-        ASD NAPOLI
+        NAPOLI
       </h1>
       <h2 className="font-display text-4xl md:text-6xl lg:text-7xl text-accent leading-none mb-8">
-        CAMPANIA TDG
+        CAMPANIA
       </h2>
       <p className="font-body text-lg text-primary-foreground/70 max-w-xl mx-auto mb-10">
         Passione, disciplina e talento. La tua scuola calcio nel cuore della Campania.
