@@ -16,6 +16,8 @@ export default {
       fontFamily: {
         display: ['"Bebas Neue"', 'sans-serif'],
         body: ['"Open Sans"', 'sans-serif'],
+        club: ['"Yeseva One"', 'serif'],
+        heading: ['"Anton"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

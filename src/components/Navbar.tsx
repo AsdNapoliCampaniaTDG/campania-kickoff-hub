@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-primary-foreground/20">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
-        <a href="#home" className="font-display text-2xl text-primary-foreground tracking-wider">
+        <a href="#home" className="font-club text-2xl text-primary-foreground tracking-wider">
           ASD NAPOLI CAMPANIA T.D.G.
         </a>
         <div className="hidden md:flex gap-6">
