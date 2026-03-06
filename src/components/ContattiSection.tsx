@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 const ContattiSection = () => (
   <section id="contatti" className="py-20 bg-background">
     <div className="container mx-auto px-4">
-      <h2 className="font-display text-5xl md:text-6xl text-primary text-center mb-4">CONTATTI</h2>
+      <h2 className="font-heading text-5xl md:text-6xl text-primary text-center mb-4">CONTATTI</h2>
       <p className="font-body text-muted-foreground text-center max-w-2xl mx-auto mb-12">
         Vuoi iscrivere tuo figlio o saperne di più? Contattaci!
       </p>
