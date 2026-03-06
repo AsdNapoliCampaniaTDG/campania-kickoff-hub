@@ -6,10 +6,10 @@ const HeroSection = () => (
       <p className="font-body text-sm uppercase tracking-[0.3em] text-accent mb-4">
         Scuola Calcio
       </p>
-      <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-primary-foreground leading-none mb-2">
+      <h1 className="font-club text-6xl md:text-8xl lg:text-9xl text-primary-foreground leading-none mb-2">
         NAPOLI
       </h1>
-      <h2 className="font-display text-4xl md:text-6xl lg:text-7xl text-accent leading-none mb-8">
+      <h2 className="font-club text-4xl md:text-6xl lg:text-7xl text-accent leading-none mb-8">
         CAMPANIA
       </h2>
       <p className="font-body text-lg text-primary-foreground/70 max-w-xl mx-auto mb-10">
