@@ -13,7 +13,7 @@ const HeroSection = () => (
       <h1 className="font-club text-6xl md:text-8xl lg:text-9xl text-primary-foreground leading-none mb-2">
         NAPOLI
       </h1>
-      <h2 className="font-club text-4xl md:text-6xl lg:text-7xl text-accent leading-none mb-4">
+      <h2 className="font-club text-6xl md:text-8xl lg:text-9xl text-accent leading-none mb-4">
         CAMPANIA
       </h2>
       <p className="font-heading text-2xl md:text-3xl text-primary-foreground/90 uppercase tracking-wider mb-10">

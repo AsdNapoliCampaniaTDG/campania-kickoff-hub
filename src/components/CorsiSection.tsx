@@ -1,9 +1,9 @@
 import { Users, Trophy, Star } from "lucide-react";
 
 const corsi = [
-  { icon: Users, title: "Piccoli Amici", eta: "5-8 anni", desc: "Avviamento al calcio attraverso il gioco e il divertimento." },
-  { icon: Star, title: "Pulcini & Esordienti", eta: "9-12 anni", desc: "Sviluppo tecnico e tattico con allenatori qualificati." },
-  { icon: Trophy, title: "Giovanissimi & Allievi", eta: "13-17 anni", desc: "Preparazione agonistica e crescita sportiva avanzata." },
+  { icon: Users, title: "Piccoli Amici", eta: "5-8 anni" },
+  { icon: Star, title: "Pulcini & Esordienti", eta: "9-12 anni" },
+  { icon: Trophy, title: "Giovanissimi & Allievi", eta: "13-17 anni" },
 ];
 
 const CorsiSection = () => (
@@ -19,7 +19,7 @@ const CorsiSection = () => (
             <c.icon className="mx-auto mb-4 text-accent" size={40} />
             <h3 className="font-display text-3xl mb-1">{c.title}</h3>
             <p className="font-body text-accent text-sm font-bold uppercase tracking-wider mb-3">{c.eta}</p>
-            <p className="font-body text-primary-foreground/70">{c.desc}</p>
+            
           </div>
         ))}
       </div>
