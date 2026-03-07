@@ -3,15 +3,18 @@ import HeroSection from "@/components/HeroSection";
 import ChiSiamoSection from "@/components/ChiSiamoSection";
 import CorsiSection from "@/components/CorsiSection";
 import ContattiSection from "@/components/ContattiSection";
+import CarouselBackground from "@/components/CarouselBackground";
 import Footer from "@/components/Footer";
 
 const Index = () => (
   <div className="font-body">
     <Navbar />
-    <HeroSection />
-    <ChiSiamoSection />
+    <CarouselBackground>
+      <HeroSection />
+      <ChiSiamoSection />
+      <ContattiSection />
+    </CarouselBackground>
     <CorsiSection />
-    <ContattiSection />
     <Footer />
   </div>
 );

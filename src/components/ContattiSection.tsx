@@ -1,13 +1,8 @@
 import { MapPin, Phone, Mail } from "lucide-react";
-import contattiBg from "@/assets/contatti-bg.jpg";
 
 const ContattiSection = () => (
-  <section id="contatti" className="relative py-20 overflow-hidden">
-    <div className="absolute inset-0">
-      <img src={contattiBg} alt="Contatti" className="w-full h-full object-cover" />
-    </div>
-    <div className="absolute inset-0 bg-primary/80" />
-    <div className="relative z-10 container mx-auto px-4">
+  <section id="contatti" className="py-20">
+    <div className="container mx-auto px-4">
       <h2 className="font-heading text-5xl md:text-6xl text-primary-foreground text-center mb-4">CONTATTI</h2>
       <p className="font-body text-primary-foreground/70 text-center max-w-2xl mx-auto mb-12">
         Vuoi iscrivere tuo figlio o saperne di più? Contattaci!
