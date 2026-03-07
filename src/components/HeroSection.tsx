@@ -1,12 +1,6 @@
-import heroBg from "@/assets/hero-bg.jpg";
-
 const HeroSection = () => (
-  <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div className="absolute inset-0">
-      <img src={heroBg} alt="Scuola calcio" className="w-full h-full object-cover" />
-    </div>
-    <div className="absolute inset-0 bg-primary/75" />
-    <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+  <section id="home" className="min-h-screen flex items-center justify-center">
+    <div className="text-center px-4 max-w-4xl mx-auto">
       <p className="font-body text-sm uppercase tracking-[0.3em] text-accent mb-4">
         Scuola Calcio
       </p>
