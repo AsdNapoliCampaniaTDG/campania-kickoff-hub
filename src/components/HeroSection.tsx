@@ -17,7 +17,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex flex-col items-center justify-center bg-background pt-20 px-4">
+    <section id="home" className="min-h-screen flex flex-col items-center justify-center bg-primary pt-20 px-4">
       {/* Carousel card */}
       <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl mb-10">
         {images.map((src, i) => (
