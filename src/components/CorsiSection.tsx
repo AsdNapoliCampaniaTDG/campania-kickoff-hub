@@ -82,13 +82,15 @@ const CorsiSection = () => {
                     <p className="font-body text-foreground/70 text-sm mb-4">Seleziona la categoria:</p>
                     <div className="grid grid-cols-2 gap-3">
                       {c.categorie.map((anno) => (
-                        <button
+                        <a
                           key={anno}
-                          onClick={() => handleCategoriaClick(c.title, anno)}
-                          className="bg-accent/20 hover:bg-accent/40 border border-accent/30 hover:border-accent text-foreground font-body font-bold py-3 px-4 rounded-lg transition text-lg"
+                          href={categoryLinks[anno]}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-accent/20 hover:bg-accent/40 border border-accent/30 hover:border-accent text-foreground font-body font-bold py-3 px-4 rounded-lg transition text-lg text-center"
                         >
                           {anno}
-                        </button>
+                        </a>
                       ))}
                     </div>
                   </>
