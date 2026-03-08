@@ -28,7 +28,11 @@ const CorsiSection = () => {
   const handleCategoriaClick = (corsoTitle: string, anno: string) => {
     const categoria = `${corsoTitle} ${anno}`;
     const text = encodeURIComponent(`Salve, vorrei informazioni riguardo la categoria ${categoria}.`);
-    window.open(`https://wa.me/393394210699?text=${text}`, "_blank");
+    const link = document.createElement("a");
+    link.href = `https://wa.me/393394210699?text=${text}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.click();
   };
 
   return (
