@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import logo from "@/assets/logo.png";
+import heroPattern from "@/assets/hero-pattern.png";
 import c1 from "@/assets/carousel-1.jpeg";
 import c2 from "@/assets/carousel-2.jpeg";
 import c3 from "@/assets/carousel-3.jpeg";
@@ -37,7 +38,12 @@ const HeroSection = () => {
   const currentGroup = groups[groupIndex];
 
   return (
-    <section id="home" className="min-h-screen flex flex-col items-center justify-center bg-background pt-20 px-4">
+    <section id="home" className="min-h-screen flex flex-col items-center justify-center pt-20 px-4 relative overflow-hidden">
+      {/* Desktop background pattern */}
+      <div
+        className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroPattern})` }}
+      />
       {/* Mobile: single image carousel */}
       <div className="md:hidden relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl mb-10">
         {allImages.map((src, i) => (
