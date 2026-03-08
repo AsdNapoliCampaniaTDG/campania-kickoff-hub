@@ -1,19 +1,24 @@
 import { useState, useEffect } from "react";
-import heroBg from "@/assets/hero-bg.jpg";
-import chiSiamoBg from "@/assets/chi-siamo-bg.jpg";
-import contattiBg from "@/assets/contatti-bg.jpg";
 import logo from "@/assets/logo.png";
+import c1 from "@/assets/carousel-1.jpeg";
+import c2 from "@/assets/carousel-2.jpeg";
+import c3 from "@/assets/carousel-3.jpeg";
+import c4 from "@/assets/carousel-4.jpeg";
+import c5 from "@/assets/carousel-5.jpeg";
+import c6 from "@/assets/carousel-6.jpeg";
+import c7 from "@/assets/carousel-7.jpeg";
+import c8 from "@/assets/carousel-8.jpeg";
 
-// 8 slots — replace with real photos later
-const allImages = [
-  heroBg, chiSiamoBg, contattiBg, heroBg,
-  chiSiamoBg, contattiBg, heroBg, chiSiamoBg,
+const groups = [
+  [c1, c2, c3, c4],
+  [c5, c6, c7, c8],
 ];
 
-const groups = [allImages.slice(0, 4), allImages.slice(4, 8)];
+const allImages = [...groups[0], ...groups[1]];
 
 const HeroSection = () => {
   const [groupIndex, setGroupIndex] = useState(0);
+  const [mobileIndex, setMobileIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,29 +27,26 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setMobileIndex((prev) => (prev + 1) % allImages.length);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
   const currentGroup = groups[groupIndex];
 
   return (
     <section id="home" className="min-h-screen flex flex-col items-center justify-center bg-background pt-20 px-4">
-      {/* Mobile: single card carousel */}
+      {/* Mobile: single image carousel */}
       <div className="md:hidden relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl mb-10">
         {allImages.map((src, i) => (
           <img
             key={i}
             src={src}
-            alt=""
+            alt="Napoli Campania"
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-            style={{ opacity: Math.floor(i / 4) === groupIndex && i % 4 === 0 ? 1 : 0 }}
-          />
-        ))}
-        {/* Show first image of current group */}
-        {groups.map((group, gi) => (
-          <img
-            key={`mobile-${gi}`}
-            src={group[0]}
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-            style={{ opacity: gi === groupIndex ? 1 : 0 }}
+            style={{ opacity: i === mobileIndex ? 1 : 0 }}
           />
         ))}
         <div className="absolute inset-0 bg-[hsl(210,100%,15%)]/50" />
@@ -60,12 +62,12 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Desktop: 4 photos in a row + text overlay */}
+      {/* Desktop: 4 photos in a row */}
       <div className="hidden md:block relative w-full max-w-6xl rounded-2xl overflow-hidden shadow-2xl mb-10">
         <div className="grid grid-cols-4 aspect-[4/1.2]">
           {currentGroup.map((src, i) => (
             <div key={`${groupIndex}-${i}`} className="relative overflow-hidden animate-fade-in">
-              <img src={src} alt="" className="w-full h-full object-cover" />
+              <img src={src} alt="Napoli Campania" className="w-full h-full object-cover" />
             </div>
           ))}
         </div>
