@@ -1,6 +1,20 @@
 import { useState } from "react";
 import { Users, Trophy, Star, ChevronLeft } from "lucide-react";
 
+const categoryLinks: Record<string, string> = {
+  "2021": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2021&type=phone_number&app_absent=0",
+  "2020": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2020&type=phone_number&app_absent=0",
+  "2019": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2019&type=phone_number&app_absent=0",
+  "2018": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2018&type=phone_number&app_absent=0",
+  "2017": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2017&type=phone_number&app_absent=0",
+  "2016": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2016&type=phone_number&app_absent=0",
+  "2015": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2015&type=phone_number&app_absent=0",
+  "2014": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2014&type=phone_number&app_absent=0",
+  "2013": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2013&type=phone_number&app_absent=0",
+  "2012": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2012&type=phone_number&app_absent=0",
+  "2011": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2011&type=phone_number&app_absent=0",
+};
+
 const corsi = [
   {
     icon: Users,
@@ -24,16 +38,6 @@ const corsi = [
 
 const CorsiSection = () => {
   const [selectedCorso, setSelectedCorso] = useState<number | null>(null);
-
-  const handleCategoriaClick = (corsoTitle: string, anno: string) => {
-    const categoria = `${corsoTitle} ${anno}`;
-    const text = encodeURIComponent(`Salve, vorrei informazioni riguardo la categoria ${categoria}.`);
-    const link = document.createElement("a");
-    link.href = `https://wa.me/393394210699?text=${text}`;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.click();
-  };
 
   return (
     <section id="corsi" className="py-20 bg-background text-foreground">
