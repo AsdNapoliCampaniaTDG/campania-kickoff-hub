@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Users, Trophy, Star, ChevronLeft } from "lucide-react";
 
 const categoryLinks: Record<string, string> = {
+  "2022": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2022&type=phone_number&app_absent=0",
   "2021": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2021&type=phone_number&app_absent=0",
   "2020": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2020&type=phone_number&app_absent=0",
   "2019": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2019&type=phone_number&app_absent=0",
@@ -19,8 +20,8 @@ const corsi = [
   {
     icon: Users,
     title: "Piccoli Amici",
-    eta: "5-8 anni",
-    categorie: ["2021", "2020", "2019", "2018"],
+    eta: "4-8 anni",
+    categorie: ["2022", "2021", "2020", "2019", "2018"],
   },
   {
     icon: Star,
