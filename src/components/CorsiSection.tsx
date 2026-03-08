@@ -82,15 +82,13 @@ const CorsiSection = () => {
                     <p className="font-body text-foreground/70 text-sm mb-4">Seleziona la categoria:</p>
                     <div className="grid grid-cols-2 gap-3">
                       {c.categorie.map((anno) => (
-                        <a
+                        <button
                           key={anno}
-                          href={categoryLinks[anno]}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-accent/20 hover:bg-accent/40 border border-accent/30 hover:border-accent text-foreground font-body font-bold py-3 px-4 rounded-lg transition text-lg text-center"
+                          onClick={() => window.open(categoryLinks[anno], "_blank")}
+                          className="bg-accent/20 hover:bg-accent/40 border border-accent/30 hover:border-accent text-foreground font-body font-bold py-3 px-4 rounded-lg transition text-lg text-center cursor-pointer"
                         >
                           {anno}
-                        </a>
+                        </button>
                       ))}
                     </div>
                   </>
