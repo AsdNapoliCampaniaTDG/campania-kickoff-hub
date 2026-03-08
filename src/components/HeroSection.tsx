@@ -84,8 +84,8 @@ const HeroSection = () => {
           <h1 className="font-club text-6xl lg:text-7xl text-white leading-none mb-1">NAPOLI</h1>
           <h2 className="font-club text-6xl lg:text-7xl text-white/80 leading-none mb-3">CAMPANIA</h2>
           <p className="font-heading text-2xl text-white/90 uppercase tracking-wider mb-6">Il calcio è casa</p>
-          <a href="#contatti" className="inline-block border-2 border-white/60 text-white font-body font-bold uppercase tracking-wider px-8 py-3 rounded-full hover:bg-white/10 transition">
-            Contattaci
+          <a href="#corsi" className="inline-block border-2 border-white/60 text-white font-body font-bold uppercase tracking-wider px-8 py-3 rounded-full hover:bg-white/10 transition">
+            INFORMAZIONI
           </a>
         </div>
       </div>
