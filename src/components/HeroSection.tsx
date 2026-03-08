@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import logo from "@/assets/logo.png";
+import heroPattern from "@/assets/hero-pattern.png";
 import c1 from "@/assets/carousel-1.jpeg";
 import c2 from "@/assets/carousel-2.jpeg";
 import c3 from "@/assets/carousel-3.jpeg";
