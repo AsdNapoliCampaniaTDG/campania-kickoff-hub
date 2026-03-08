@@ -13,9 +13,9 @@ const CorsiSection = () => (
       <p className="font-body text-foreground/70 text-center max-w-2xl mx-auto mb-14">
         Percorsi formativi per ogni fascia d'età, seguiti da staff tecnico certificato FIGC.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="flex flex-col md:flex-row gap-8 justify-center">
         {corsi.map((c) => (
-          <div key={c.title} className="bg-foreground/10 border border-foreground/20 rounded-lg p-8 text-center hover:bg-foreground/15 transition">
+          <div key={c.title} className="flex-1 max-w-sm bg-foreground/10 border border-foreground/20 rounded-lg p-8 text-center hover:bg-foreground/15 transition">
             <c.icon className="mx-auto mb-4 text-accent" size={40} />
             <h3 className="font-display text-3xl mb-1">{c.title}</h3>
             <p className="font-body text-accent-foreground text-sm font-bold uppercase tracking-wider mb-3">{c.eta}</p>
