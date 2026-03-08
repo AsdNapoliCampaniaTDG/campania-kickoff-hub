@@ -43,8 +43,11 @@ const CorsiSection = () => {
     <section id="corsi" className="py-20 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <h2 className="font-heading text-5xl md:text-6xl text-center mb-4">I NOSTRI CORSI</h2>
-        <p className="font-body text-foreground/70 text-center max-w-2xl mx-auto mb-14">
+        <p className="font-body text-foreground/70 text-center max-w-2xl mx-auto mb-4">
           Percorsi formativi per ogni fascia d'età, seguiti da staff tecnico certificato FIGC.
+        </p>
+        <p className="font-heading text-2xl md:text-3xl text-center mb-14">
+          SELEZIONA LA TUA CATEGORIA
         </p>
 
         {selectedCorso === null ? (
