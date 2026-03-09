@@ -13,6 +13,7 @@ const Index = () => (
     <HeroSection />
     <ChiSiamoSection />
     <CentroSportivoSection />
+    <InstagramSection />
     <CorsiSection />
     <ContattiSection />
     <Footer />
