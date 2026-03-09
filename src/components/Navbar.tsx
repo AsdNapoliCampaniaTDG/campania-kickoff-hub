@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Chi Siamo", href: "#chi-siamo" },
   { label: "Corsi", href: "#corsi" },
   { label: "Contatti", href: "#contatti" },
+  { label: "Partite", href: "https://napolicampania-play-hub.lovable.app", external: true },
 ];
 
 const Navbar = () => {
@@ -22,8 +23,9 @@ const Navbar = () => {
         <div className="hidden md:flex gap-6">
           {navLinks.map((l) => (
             <a
-              key={l.href}
+              key={l.label}
               href={l.href}
+              {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               className="font-body text-sm font-semibold text-foreground/80 hover:text-foreground transition-colors uppercase tracking-wide"
             >
               {l.label}
@@ -38,8 +40,9 @@ const Navbar = () => {
         <div className="md:hidden bg-background border-t border-foreground/20 px-4 pb-4">
           {navLinks.map((l) => (
             <a
-              key={l.href}
+              key={l.label}
               href={l.href}
+              {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               onClick={() => setOpen(false)}
               className="block py-2 font-body text-sm font-semibold text-foreground/80 hover:text-foreground uppercase tracking-wide"
             >
