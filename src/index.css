@@ -40,6 +40,8 @@
     --centro-bg: 140 40% 91%;
     --centro-foreground: 147 73% 15%;
 
+    --instagram-foreground: 338 76% 39%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -85,6 +87,8 @@
 
       --centro-bg: 147 73% 15%;
       --centro-foreground: 140 40% 91%;
+
+      --instagram-foreground: 338 76% 39%;
 
       --sidebar-background: 210 100% 12%;
       --sidebar-foreground: 0 0% 90%;
