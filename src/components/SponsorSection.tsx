@@ -18,7 +18,7 @@ const SponsorSection = () => (
             <img
               src={s.src}
               alt={s.alt}
-              className="h-32 md:h-52 w-auto object-contain"
+              className="h-40 md:h-64 w-auto object-contain"
               loading="lazy"
             />
           </div>
