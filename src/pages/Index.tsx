@@ -16,6 +16,7 @@ const Index = () => (
     <CentroSportivoSection />
     <InstagramSection />
     <CorsiSection />
+    <SponsorSection />
     <ContattiSection />
     <Footer />
   </div>
