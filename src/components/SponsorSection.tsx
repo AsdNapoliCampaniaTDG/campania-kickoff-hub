@@ -9,7 +9,7 @@ const sponsors = [
 ];
 
 const SponsorSection = () => (
-  <section className="py-20 bg-background">
+  <section className="py-20">
     <div className="container mx-auto px-4 text-center">
       <h2 className="font-heading text-5xl md:text-6xl text-foreground mb-12">SPONSOR</h2>
       <div className="flex items-center justify-center gap-4 md:gap-12 mx-auto flex-wrap">
