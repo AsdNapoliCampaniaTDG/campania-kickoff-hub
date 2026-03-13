@@ -12,13 +12,13 @@ const SponsorSection = () => (
   <section className="py-20 bg-background">
     <div className="container mx-auto px-4 text-center">
       <h2 className="font-heading text-5xl md:text-6xl text-foreground mb-12">SPONSOR</h2>
-      <div className="flex items-center justify-center gap-8 md:gap-16 max-w-4xl mx-auto">
+      <div className="flex items-center justify-center gap-6 md:gap-12 mx-auto overflow-x-auto pb-2">
         {sponsors.map((s) => (
-          <div key={s.alt} className="bg-background rounded-lg p-4">
+          <div key={s.alt} className="bg-background rounded-lg p-0 shrink-0">
             <img
               src={s.src}
               alt={s.alt}
-              className="h-40 md:h-64 w-auto object-contain"
+              className="h-52 md:h-72 w-auto max-w-none object-contain"
               loading="lazy"
             />
           </div>
