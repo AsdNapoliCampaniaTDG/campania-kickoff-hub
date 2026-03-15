@@ -147,7 +147,7 @@ const CentroSportivo = () => {
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Seleziona modalità" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="z-[9999]" position="popper" sideOffset={4}>
                     <SelectItem value="tutto">Tutto campo</SelectItem>
                     <SelectItem value="meta">Metà campo</SelectItem>
                   </SelectContent>
