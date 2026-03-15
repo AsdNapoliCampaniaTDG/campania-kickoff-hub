@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -13,11 +14,19 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClick = (l: typeof navLinks[0]) => {
+    setOpen(false);
+    if (l.internal) {
+      navigate(l.href);
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-foreground/20">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
-        <a href="#home" className="flex items-center gap-3 font-club text-2xl text-foreground tracking-wider">
+        <a href="/" onClick={(e) => { e.preventDefault(); navigate("/"); }} className="flex items-center gap-3 font-club text-2xl text-foreground tracking-wider">
           <img src={logo} alt="Logo ASD Napoli Campania" className="h-10 w-10 object-contain" />
           ASD NAPOLI CAMPANIA
         </a>
@@ -27,6 +36,7 @@ const Navbar = () => {
               key={l.label}
               href={l.href}
               {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              onClick={l.internal ? (e) => { e.preventDefault(); handleClick(l); } : undefined}
               className="font-body text-sm font-semibold text-foreground/80 hover:text-foreground transition-colors uppercase tracking-wide"
             >
               {l.label}
@@ -44,7 +54,7 @@ const Navbar = () => {
               key={l.label}
               href={l.href}
               {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              onClick={() => setOpen(false)}
+              onClick={l.internal ? (e) => { e.preventDefault(); handleClick(l); } : () => setOpen(false)}
               className="block py-2 font-body text-sm font-semibold text-foreground/80 hover:text-foreground uppercase tracking-wide"
             >
               {l.label}
