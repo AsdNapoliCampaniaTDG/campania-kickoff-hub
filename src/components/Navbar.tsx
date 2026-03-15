@@ -4,6 +4,7 @@ import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
+  { label: "Centro Sportivo", href: "/centro-sportivo", internal: true },
   { label: "Chi Siamo", href: "#chi-siamo" },
   { label: "Corsi", href: "#corsi" },
   { label: "Contatti", href: "#contatti" },

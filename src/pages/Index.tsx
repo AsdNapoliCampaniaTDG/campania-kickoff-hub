@@ -13,7 +13,6 @@ const Index = () => (
     <Navbar />
     <HeroSection />
     <ChiSiamoSection />
-    <CentroSportivoSection />
     <InstagramSection />
     <CorsiSection />
     <SponsorSection />
