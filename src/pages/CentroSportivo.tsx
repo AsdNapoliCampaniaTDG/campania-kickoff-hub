@@ -128,7 +128,7 @@ const CentroSportivo = () => {
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Seleziona un orario" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="z-[9999]" position="popper" sideOffset={4}>
                     {orari.map((o) => (
                       <SelectItem key={o} value={o}>
                         {o}
