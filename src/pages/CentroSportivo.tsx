@@ -30,8 +30,8 @@ const orari = [
 const CentroSportivo = () => {
   const navigate = useNavigate();
   const [date, setDate] = useState<Date>();
-  const [orario, setOrario] = useState("");
-  const [modalita, setModalita] = useState("");
+  const [orario, setOrario] = useState<string | undefined>(undefined);
+  const [modalita, setModalita] = useState<string | undefined>(undefined);
 
   const isComplete = date && orario && modalita;
 
