@@ -55,8 +55,10 @@ const CentroSportivo = () => {
       // Questa settimana
       giornoLabel = giornoSettimana;
     } else if (diffDays >= 7 && diffDays <= 13) {
-      // Settimana prossima
-      giornoLabel = `${giornoSettimana} prossimo`;
+      // Settimana prossima: aggiungi "prossimo" solo se il giorno >= giorno di oggi nella settimana
+      const todayDow = today.getDay(); // 0=dom, 1=lun...6=sab
+      const selectedDow = selectedDay.getDay();
+      giornoLabel = selectedDow >= todayDow ? `${giornoSettimana} prossimo` : giornoSettimana;
     } else {
       giornoLabel = `${giornoSettimana} ${format(date, "d MMMM", { locale: it })}`;
     }
