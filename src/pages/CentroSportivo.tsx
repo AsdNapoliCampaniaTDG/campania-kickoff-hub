@@ -38,9 +38,31 @@ const CentroSportivo = () => {
   const handleContinua = () => {
     if (!date || !orario || !modalita) return;
 
-    const giornoFormatted = format(date, "d MMMM yyyy", { locale: it });
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const selectedDay = new Date(date);
+    selectedDay.setHours(0, 0, 0, 0);
+
+    const diffDays = Math.round((selectedDay.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+    const giornoSettimana = format(date, "EEEE", { locale: it });
+    
+    let giornoLabel: string;
+    if (diffDays === 0) {
+      giornoLabel = "oggi";
+    } else if (diffDays === 1) {
+      giornoLabel = "domani";
+    } else if (diffDays >= 2 && diffDays <= 6) {
+      // Questa settimana
+      giornoLabel = giornoSettimana;
+    } else if (diffDays >= 7 && diffDays <= 13) {
+      // Settimana prossima
+      giornoLabel = `${giornoSettimana} prossimo`;
+    } else {
+      giornoLabel = `${giornoSettimana} ${format(date, "d MMMM", { locale: it })}`;
+    }
+
     const modalitaText = modalita === "tutto" ? "tutto campo" : "metà campo";
-    const text = `Salve, vorrei prenotare a ${modalitaText} per ${giornoFormatted} alle ${orario}. `;
+    const text = `Salve, vorrei prenotare a ${modalitaText} per ${giornoLabel} alle ${orario}. `;
     const encoded = encodeURIComponent(text);
     window.open(`https://wa.me/393394210699?text=${encoded}`, "_blank");
   };
