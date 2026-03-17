@@ -6,7 +6,6 @@ import { it } from "date-fns/locale";
 import centroImg from "@/assets/centro-sportivo.jpg";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 const CentroSportivo = () => {
   const navigate = useNavigate();
@@ -14,11 +13,12 @@ const CentroSportivo = () => {
   const [orario, setOrario] = useState("");
   const [modalita, setModalita] = useState("");
 
-  const isComplete = date && orario && modalita;
+  const isComplete = dateStr && orario && modalita;
 
   const handleContinua = () => {
-    if (!date || !orario || !modalita) return;
+    if (!dateStr || !orario || !modalita) return;
 
+    const date = new Date(dateStr + "T00:00:00");
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const selectedDay = new Date(date);
@@ -33,11 +33,9 @@ const CentroSportivo = () => {
     } else if (diffDays === 1) {
       giornoLabel = "domani";
     } else if (diffDays >= 2 && diffDays <= 6) {
-      // Questa settimana
       giornoLabel = giornoSettimana;
     } else if (diffDays >= 7 && diffDays <= 13) {
-      // Settimana prossima: aggiungi "prossimo" solo se il giorno >= giorno di oggi nella settimana
-      const todayDow = today.getDay(); // 0=dom, 1=lun...6=sab
+      const todayDow = today.getDay();
       const selectedDow = selectedDay.getDay();
       giornoLabel = selectedDow >= todayDow ? `${giornoSettimana} prossimo` : giornoSettimana;
     } else {
@@ -49,6 +47,8 @@ const CentroSportivo = () => {
     const encoded = encodeURIComponent(text);
     window.open(`https://wa.me/393394210699?text=${encoded}`, "_blank");
   };
+
+  const todayStr = new Date().toISOString().split("T")[0];
 
   return (
     <div className="min-h-screen bg-[hsl(var(--centro-bg))] text-[hsl(var(--centro-foreground))] font-body">
@@ -98,30 +98,13 @@ const CentroSportivo = () => {
                 <label className="block font-body text-sm font-semibold mb-2 uppercase tracking-wide">
                   Giorno
                 </label>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <Button
-                      variant="outline"
-                      className={cn(
-                        "w-full justify-start text-left font-normal",
-                        !date && "text-muted-foreground"
-                      )}
-                    >
-                      <CalendarIcon className="mr-2 h-4 w-4" />
-                      {date ? format(date, "d MMMM yyyy", { locale: it }) : "Seleziona un giorno"}
-                    </Button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={date}
-                      onSelect={setDate}
-                      disabled={(d) => d < new Date(new Date().setHours(0, 0, 0, 0))}
-                      initialFocus
-                      className="p-3 pointer-events-auto"
-                    />
-                  </PopoverContent>
-                </Popover>
+                <input
+                  type="date"
+                  value={dateStr}
+                  min={todayStr}
+                  onChange={(e) => setDateStr(e.target.value)}
+                  className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                />
               </div>
 
               {/* Orario */}
@@ -129,18 +112,12 @@ const CentroSportivo = () => {
                 <label className="block font-body text-sm font-semibold mb-2 uppercase tracking-wide">
                   Orario
                 </label>
-                <Select value={orario} onValueChange={setOrario}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Seleziona un orario" />
-                  </SelectTrigger>
-                  <SelectContent className="z-[9999]" position="popper" sideOffset={4}>
-                    {orari.map((o) => (
-                      <SelectItem key={o} value={o}>
-                        {o}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <input
+                  type="time"
+                  value={orario}
+                  onChange={(e) => setOrario(e.target.value)}
+                  className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                />
               </div>
 
               {/* Modalità campo */}
@@ -148,15 +125,15 @@ const CentroSportivo = () => {
                 <label className="block font-body text-sm font-semibold mb-2 uppercase tracking-wide">
                   Modalità campo
                 </label>
-                <Select value={modalita} onValueChange={setModalita}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Seleziona modalità" />
-                  </SelectTrigger>
-                  <SelectContent className="z-[9999]" position="popper" sideOffset={4}>
-                    <SelectItem value="tutto">Tutto campo</SelectItem>
-                    <SelectItem value="meta">Metà campo</SelectItem>
-                  </SelectContent>
-                </Select>
+                <select
+                  value={modalita}
+                  onChange={(e) => setModalita(e.target.value)}
+                  className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                >
+                  <option value="" disabled>Seleziona modalità</option>
+                  <option value="tutto">Tutto campo</option>
+                  <option value="meta">Metà campo</option>
+                </select>
               </div>
 
               {/* Continua */}
