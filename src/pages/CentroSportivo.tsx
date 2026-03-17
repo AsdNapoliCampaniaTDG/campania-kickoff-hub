@@ -1,31 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CalendarIcon, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { format } from "date-fns";
 import { it } from "date-fns/locale";
 import centroImg from "@/assets/centro-sportivo.jpg";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-
-const orari = [
-  "08:00", "09:00", "10:00", "11:00", "12:00",
-  "13:00", "14:00", "15:00", "16:00", "17:00",
-  "18:00", "19:00", "20:00", "21:00", "22:00",
-];
 
 const CentroSportivo = () => {
   const navigate = useNavigate();
