@@ -10,9 +10,9 @@ import { cn } from "@/lib/utils";
 
 const CentroSportivo = () => {
   const navigate = useNavigate();
-  const [date, setDate] = useState<Date>();
-  const [orario, setOrario] = useState<string | undefined>(undefined);
-  const [modalita, setModalita] = useState<string | undefined>(undefined);
+  const [dateStr, setDateStr] = useState("");
+  const [orario, setOrario] = useState("");
+  const [modalita, setModalita] = useState("");
 
   const isComplete = date && orario && modalita;
 
