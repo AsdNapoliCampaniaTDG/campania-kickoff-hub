@@ -32,7 +32,7 @@ const ChiSiamoSection = () => (
 
       <h3 className="font-heading text-2xl md:text-3xl text-foreground mb-4">Unisciti alla Nostra Famiglia</h3>
       <p className="font-body text-foreground/70 leading-relaxed">
-        Scegliere l'ASD NAPOLI CAMPANIA T.D.G. significa entrare a far parte di un progetto serio, ambizioso e trasparente. Che sia per il primo calcio a un pallone o per perfezionare il proprio talento, siamo pronti a scendere in campo insieme a voi.
+        Scegliere il Napoli Campania significa entrare a far parte di un progetto serio, ambizioso e trasparente. Che sia per il primo calcio a un pallone o per perfezionare il proprio talento, siamo pronti a scendere in campo insieme a voi.
       </p>
     </div>
   </section>

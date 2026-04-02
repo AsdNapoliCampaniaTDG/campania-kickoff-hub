@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Users, Trophy, Star, ChevronLeft } from "lucide-react";
+import { Users, Trophy, Star, ChevronLeft, Footprints, Shield } from "lucide-react";
 
 const categoryLinks: Record<string, string> = {
   "2022": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2022&type=phone_number&app_absent=0",
@@ -20,20 +20,38 @@ const corsi = [
   {
     icon: Users,
     title: "Piccoli Amici",
-    eta: "4-8 anni",
-    categorie: ["2022", "2021", "2020", "2019", "2018"],
+    eta: "4-7 anni",
+    categorie: ["2019", "2020", "2021", "2022"],
+  },
+  {
+    icon: Footprints,
+    title: "Primi Calci",
+    eta: "8-9 anni",
+    categorie: ["2017", "2018"],
   },
   {
     icon: Star,
-    title: "Pulcini & Esordienti",
-    eta: "9-12 anni",
-    categorie: ["2017", "2016", "2015", "2014"],
+    title: "Pulcini",
+    eta: "10-11 anni",
+    categorie: ["2015", "2016"],
   },
   {
     icon: Trophy,
-    title: "Giovanissimi & Allievi",
-    eta: "13-15 anni",
-    categorie: ["2013", "2012", "2011"],
+    title: "Esordienti",
+    eta: "12-13 anni",
+    categorie: ["2013", "2014"],
+  },
+  {
+    icon: Shield,
+    title: "Under 14",
+    eta: "14 anni",
+    categorie: ["2012"],
+  },
+  {
+    icon: Shield,
+    title: "Under 15",
+    eta: "15 anni",
+    categorie: ["2011"],
   },
 ];
 
@@ -52,12 +70,12 @@ const CorsiSection = () => {
         </p>
 
         {selectedCorso === null ? (
-          <div className="flex flex-col md:flex-row gap-8 justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {corsi.map((c, i) => (
               <button
                 key={c.title}
                 onClick={() => setSelectedCorso(i)}
-                className="flex-1 max-w-sm bg-foreground/10 border border-foreground/20 rounded-lg p-8 text-center hover:bg-foreground/15 hover:border-accent transition cursor-pointer"
+                className="bg-foreground/10 border border-foreground/20 rounded-lg p-8 text-center hover:bg-foreground/15 hover:border-accent transition cursor-pointer"
               >
                 <c.icon className="mx-auto mb-4 text-accent" size={40} />
                 <h3 className="font-display text-3xl mb-1">{c.title}</h3>
