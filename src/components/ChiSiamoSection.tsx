@@ -5,14 +5,14 @@ const ChiSiamoSection = () => (
         CHI SIAMO
       </h2>
       <h3 className="font-heading text-2xl md:text-3xl text-foreground text-center mb-2">
-        Chi Siamo – ASD NAPOLI CAMPANIA T.D.G.
+        NAPOLI CAMPANIA
       </h3>
       <p className="font-body text-foreground/80 text-center italic text-lg mb-8">
         Il calcio come scuola di vita, il campo come casa.
       </p>
 
       <p className="font-body text-foreground/70 mb-8 leading-relaxed">
-        L'ASD NAPOLI CAMPANIA T.D.G. nasce con un obiettivo chiaro: formare i campioni di domani, non solo nel calcio, ma soprattutto nella vita. Radicata nel cuore del nostro territorio, la nostra associazione è molto più di una scuola calcio; è una comunità dove passione, disciplina e divertimento si incontrano.
+        La scuola calcio Napoli Campania nasce con un obiettivo chiaro: formare i campioni di domani, non solo nel calcio, ma soprattutto nella vita. Radicata nel cuore del nostro territorio, la nostra associazione è molto più di una scuola calcio; è una comunità dove passione, disciplina e divertimento si incontrano.
       </p>
 
       <h3 className="font-heading text-2xl md:text-3xl text-foreground mb-4">La Nostra Filosofia</h3>
@@ -32,7 +32,7 @@ const ChiSiamoSection = () => (
 
       <h3 className="font-heading text-2xl md:text-3xl text-foreground mb-4">Unisciti alla Nostra Famiglia</h3>
       <p className="font-body text-foreground/70 leading-relaxed">
-        Scegliere l'ASD NAPOLI CAMPANIA T.D.G. significa entrare a far parte di un progetto serio, ambizioso e trasparente. Che sia per il primo calcio a un pallone o per perfezionare il proprio talento, siamo pronti a scendere in campo insieme a voi.
+        Scegliere il Napoli Campania significa entrare a far parte di un progetto serio, ambizioso e trasparente. Che sia per il primo calcio a un pallone o per perfezionare il proprio talento, siamo pronti a scendere in campo insieme a voi.
       </p>
     </div>
   </section>
