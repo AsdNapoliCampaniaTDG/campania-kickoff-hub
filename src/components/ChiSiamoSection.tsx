@@ -5,7 +5,7 @@ const ChiSiamoSection = () => (
         CHI SIAMO
       </h2>
       <h3 className="font-heading text-2xl md:text-3xl text-foreground text-center mb-2">
-        Chi Siamo – ASD NAPOLI CAMPANIA T.D.G.
+        NAPOLI CAMPANIA
       </h3>
       <p className="font-body text-foreground/80 text-center italic text-lg mb-8">
         Il calcio come scuola di vita, il campo come casa.
