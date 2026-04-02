@@ -12,7 +12,7 @@ const ChiSiamoSection = () => (
       </p>
 
       <p className="font-body text-foreground/70 mb-8 leading-relaxed">
-        L'ASD NAPOLI CAMPANIA T.D.G. nasce con un obiettivo chiaro: formare i campioni di domani, non solo nel calcio, ma soprattutto nella vita. Radicata nel cuore del nostro territorio, la nostra associazione è molto più di una scuola calcio; è una comunità dove passione, disciplina e divertimento si incontrano.
+        La scuola calcio Napoli Campania nasce con un obiettivo chiaro: formare i campioni di domani, non solo nel calcio, ma soprattutto nella vita. Radicata nel cuore del nostro territorio, la nostra associazione è molto più di una scuola calcio; è una comunità dove passione, disciplina e divertimento si incontrano.
       </p>
 
       <h3 className="font-heading text-2xl md:text-3xl text-foreground mb-4">La Nostra Filosofia</h3>
