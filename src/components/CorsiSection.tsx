@@ -27,9 +27,17 @@ const corsi = [
 
 const CorsiSection = () => {
   const [selectedCorso, setSelectedCorso] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  const handleSelect = (i: number) => {
+    setSelectedCorso(i);
+    requestAnimationFrame(() => {
+      sectionRef.current?.scrollIntoView({ block: "nearest" });
+    });
+  };
 
   return (
-    <section id="corsi" className="py-20 bg-background text-foreground">
+    <section id="corsi" className="py-20 bg-background text-foreground" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <h2 className="font-heading text-5xl md:text-6xl text-center mb-4">I NOSTRI CORSI</h2>
         <p className="font-body text-foreground/70 text-center max-w-2xl mx-auto mb-4">
