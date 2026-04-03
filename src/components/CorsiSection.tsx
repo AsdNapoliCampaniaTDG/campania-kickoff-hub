@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Users, Trophy, Star, ChevronLeft, Footprints, Shield } from "lucide-react";
+import { useState, useRef } from "react";
+import { ChevronLeft } from "lucide-react";
 
 const categoryLinks: Record<string, string> = {
   "2022": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2022&type=phone_number&app_absent=0",
@@ -17,49 +17,27 @@ const categoryLinks: Record<string, string> = {
 };
 
 const corsi = [
-  {
-    icon: Users,
-    title: "Piccoli Amici",
-    eta: "4-7 anni",
-    categorie: ["2019", "2020", "2021", "2022"],
-  },
-  {
-    icon: Footprints,
-    title: "Primi Calci",
-    eta: "8-9 anni",
-    categorie: ["2017", "2018"],
-  },
-  {
-    icon: Star,
-    title: "Pulcini",
-    eta: "10-11 anni",
-    categorie: ["2015", "2016"],
-  },
-  {
-    icon: Trophy,
-    title: "Esordienti",
-    eta: "12-13 anni",
-    categorie: ["2013", "2014"],
-  },
-  {
-    icon: Shield,
-    title: "Under 14",
-    eta: "14 anni",
-    categorie: ["2012"],
-  },
-  {
-    icon: Shield,
-    title: "Under 15",
-    eta: "15 anni",
-    categorie: ["2011"],
-  },
+  { title: "Piccoli Amici", eta: "4-7 anni", categorie: ["2019", "2020", "2021", "2022"] },
+  { title: "Primi Calci", eta: "8-9 anni", categorie: ["2017", "2018"] },
+  { title: "Pulcini", eta: "10-11 anni", categorie: ["2015", "2016"] },
+  { title: "Esordienti", eta: "12-13 anni", categorie: ["2013", "2014"] },
+  { title: "Under 14", eta: "14 anni", categorie: ["2012"] },
+  { title: "Under 15", eta: "15 anni", categorie: ["2011"] },
 ];
 
 const CorsiSection = () => {
   const [selectedCorso, setSelectedCorso] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  const handleSelect = (i: number) => {
+    setSelectedCorso(i);
+    requestAnimationFrame(() => {
+      sectionRef.current?.scrollIntoView({ block: "nearest" });
+    });
+  };
 
   return (
-    <section id="corsi" className="py-20 bg-background text-foreground">
+    <section id="corsi" className="py-20 bg-background text-foreground" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <h2 className="font-heading text-5xl md:text-6xl text-center mb-4">I NOSTRI CORSI</h2>
         <p className="font-body text-foreground/70 text-center max-w-2xl mx-auto mb-4">
@@ -74,10 +52,9 @@ const CorsiSection = () => {
             {corsi.map((c, i) => (
               <button
                 key={c.title}
-                onClick={() => setSelectedCorso(i)}
+                onClick={() => handleSelect(i)}
                 className="bg-foreground/10 border border-foreground/20 rounded-lg p-8 text-center hover:bg-foreground/15 hover:border-accent transition cursor-pointer"
               >
-                <c.icon className="mx-auto mb-4 text-accent" size={40} />
                 <h3 className="font-display text-3xl mb-1">{c.title}</h3>
                 <p className="font-body text-accent-foreground text-sm font-bold uppercase tracking-wider mb-3">{c.eta}</p>
                 <p className="font-body text-foreground/50 text-xs mt-2">Clicca per scegliere la categoria</p>
@@ -98,7 +75,6 @@ const CorsiSection = () => {
                 const c = corsi[selectedCorso];
                 return (
                   <>
-                    <c.icon className="mx-auto mb-4 text-accent" size={40} />
                     <h3 className="font-display text-3xl mb-1">{c.title}</h3>
                     <p className="font-body text-accent-foreground text-sm font-bold uppercase tracking-wider mb-6">{c.eta}</p>
                     <p className="font-body text-foreground/70 text-sm mb-4">Seleziona la categoria:</p>

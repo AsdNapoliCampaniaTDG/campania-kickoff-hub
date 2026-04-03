@@ -9,24 +9,13 @@ import c5 from "@/assets/carousel-5.jpeg";
 import c6 from "@/assets/carousel-6.jpeg";
 import c7 from "@/assets/carousel-7.jpeg";
 import c8 from "@/assets/carousel-8.jpeg";
+import c9 from "@/assets/carousel-9.jpeg";
+import c10 from "@/assets/carousel-10.jpeg";
 
-const groups = [
-  [c1, c2, c3, c4],
-  [c5, c6, c7, c8],
-];
-
-const allImages = [...groups[0], ...groups[1]];
+const allImages = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10];
 
 const HeroSection = () => {
-  const [groupIndex, setGroupIndex] = useState(0);
   const [mobileIndex, setMobileIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setGroupIndex((prev) => (prev + 1) % groups.length);
-    }, 10000);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,8 +23,6 @@ const HeroSection = () => {
     }, 10000);
     return () => clearInterval(interval);
   }, []);
-
-  const currentGroup = groups[groupIndex];
 
   return (
     <section id="home" className="min-h-screen flex flex-col items-center justify-center pt-20 px-4 relative overflow-hidden">
@@ -70,7 +57,7 @@ const HeroSection = () => {
 
       {/* Desktop: 4 photos in a row */}
       <div className="hidden md:block relative w-full max-w-6xl rounded-2xl overflow-hidden shadow-2xl mb-10">
-        <div className="grid grid-cols-4 grid-rows-2 aspect-[2/1]">
+        <div className="grid grid-cols-5 grid-rows-2 aspect-[5/2]">
           {allImages.map((src, i) => (
             <div key={i} className="relative overflow-hidden">
               <img src={src} alt="Napoli Campania" className="w-full h-full object-cover" />
