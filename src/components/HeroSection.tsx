@@ -9,13 +9,10 @@ import c5 from "@/assets/carousel-5.jpeg";
 import c6 from "@/assets/carousel-6.jpeg";
 import c7 from "@/assets/carousel-7.jpeg";
 import c8 from "@/assets/carousel-8.jpeg";
+import c9 from "@/assets/carousel-9.jpeg";
+import c10 from "@/assets/carousel-10.jpeg";
 
-const groups = [
-  [c1, c2, c3, c4],
-  [c5, c6, c7, c8],
-];
-
-const allImages = [...groups[0], ...groups[1]];
+const allImages = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10];
 
 const HeroSection = () => {
   const [groupIndex, setGroupIndex] = useState(0);

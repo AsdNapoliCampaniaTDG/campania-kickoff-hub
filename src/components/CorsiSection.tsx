@@ -75,7 +75,6 @@ const CorsiSection = () => {
                 const c = corsi[selectedCorso];
                 return (
                   <>
-                    <c.icon className="mx-auto mb-4 text-accent" size={40} />
                     <h3 className="font-display text-3xl mb-1">{c.title}</h3>
                     <p className="font-body text-accent-foreground text-sm font-bold uppercase tracking-wider mb-6">{c.eta}</p>
                     <p className="font-body text-foreground/70 text-sm mb-4">Seleziona la categoria:</p>
