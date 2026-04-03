@@ -57,7 +57,7 @@ const CentroSportivo = () => {
         <div className="container mx-auto flex items-center justify-between py-3 px-4">
           <a href="/" className="flex items-center gap-3 font-club text-2xl text-foreground tracking-wider">
             <img src={logo} alt="Logo ASD Napoli Campania" className="h-10 w-10 object-contain" />
-            ASD NAPOLI CAMPANIA
+            NAPOLI CAMPANIA
           </a>
           <button
             onClick={() => navigate("/")}
