@@ -57,7 +57,7 @@ const HeroSection = () => {
 
       {/* Desktop: 4 photos in a row */}
       <div className="hidden md:block relative w-full max-w-6xl rounded-2xl overflow-hidden shadow-2xl mb-10">
-        <div className="grid grid-cols-4 grid-rows-2 aspect-[2/1]">
+        <div className="grid grid-cols-5 grid-rows-2 aspect-[5/2]">
           {allImages.map((src, i) => (
             <div key={i} className="relative overflow-hidden">
               <img src={src} alt="Napoli Campania" className="w-full h-full object-cover" />
