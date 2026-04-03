@@ -52,10 +52,9 @@ const CorsiSection = () => {
             {corsi.map((c, i) => (
               <button
                 key={c.title}
-                onClick={() => setSelectedCorso(i)}
+                onClick={() => handleSelect(i)}
                 className="bg-foreground/10 border border-foreground/20 rounded-lg p-8 text-center hover:bg-foreground/15 hover:border-accent transition cursor-pointer"
               >
-                <c.icon className="mx-auto mb-4 text-accent" size={40} />
                 <h3 className="font-display text-3xl mb-1">{c.title}</h3>
                 <p className="font-body text-accent-foreground text-sm font-bold uppercase tracking-wider mb-3">{c.eta}</p>
                 <p className="font-body text-foreground/50 text-xs mt-2">Clicca per scegliere la categoria</p>
