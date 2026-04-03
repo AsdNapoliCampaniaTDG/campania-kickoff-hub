@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Users, Trophy, Star, ChevronLeft, Footprints, Shield } from "lucide-react";
+import { useState, useRef } from "react";
+import { ChevronLeft } from "lucide-react";
 
 const categoryLinks: Record<string, string> = {
   "2022": "https://api.whatsapp.com/send/?phone=393394210699&text=Salve%2C+vorrei+informazioni+riguardo+la+categoria+2022&type=phone_number&app_absent=0",
