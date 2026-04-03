@@ -15,15 +15,7 @@ import c10 from "@/assets/carousel-10.jpeg";
 const allImages = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10];
 
 const HeroSection = () => {
-  const [groupIndex, setGroupIndex] = useState(0);
   const [mobileIndex, setMobileIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setGroupIndex((prev) => (prev + 1) % groups.length);
-    }, 10000);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,8 +23,6 @@ const HeroSection = () => {
     }, 10000);
     return () => clearInterval(interval);
   }, []);
-
-  const currentGroup = groups[groupIndex];
 
   return (
     <section id="home" className="min-h-screen flex flex-col items-center justify-center pt-20 px-4 relative overflow-hidden">
