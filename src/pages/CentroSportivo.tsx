@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { format } from "date-fns";
 import { it } from "date-fns/locale";
-import centroImg from "@/assets/centro-sportivo.jpg";
+
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 
@@ -74,9 +74,12 @@ const CentroSportivo = () => {
         <div className="container mx-auto px-4 py-12 text-center">
           <h1 className="font-heading text-5xl md:text-6xl mb-10">CENTRO SPORTIVO NAPOLI CAMPANIA</h1>
           <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl mb-16">
-            <img
-              src={centroImg}
-              alt="Vista aerea del Centro Sportivo Napoli Campania a Torre del Greco"
+            <video
+              src="/centro-sportivo.mov"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-auto object-cover"
             />
           </div>
