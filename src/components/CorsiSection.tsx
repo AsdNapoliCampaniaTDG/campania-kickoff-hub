@@ -17,42 +17,12 @@ const categoryLinks: Record<string, string> = {
 };
 
 const corsi = [
-  {
-    icon: Users,
-    title: "Piccoli Amici",
-    eta: "4-7 anni",
-    categorie: ["2019", "2020", "2021", "2022"],
-  },
-  {
-    icon: Footprints,
-    title: "Primi Calci",
-    eta: "8-9 anni",
-    categorie: ["2017", "2018"],
-  },
-  {
-    icon: Star,
-    title: "Pulcini",
-    eta: "10-11 anni",
-    categorie: ["2015", "2016"],
-  },
-  {
-    icon: Trophy,
-    title: "Esordienti",
-    eta: "12-13 anni",
-    categorie: ["2013", "2014"],
-  },
-  {
-    icon: Shield,
-    title: "Under 14",
-    eta: "14 anni",
-    categorie: ["2012"],
-  },
-  {
-    icon: Shield,
-    title: "Under 15",
-    eta: "15 anni",
-    categorie: ["2011"],
-  },
+  { title: "Piccoli Amici", eta: "4-7 anni", categorie: ["2019", "2020", "2021", "2022"] },
+  { title: "Primi Calci", eta: "8-9 anni", categorie: ["2017", "2018"] },
+  { title: "Pulcini", eta: "10-11 anni", categorie: ["2015", "2016"] },
+  { title: "Esordienti", eta: "12-13 anni", categorie: ["2013", "2014"] },
+  { title: "Under 14", eta: "14 anni", categorie: ["2012"] },
+  { title: "Under 15", eta: "15 anni", categorie: ["2011"] },
 ];
 
 const CorsiSection = () => {
