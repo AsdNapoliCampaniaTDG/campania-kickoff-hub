@@ -9,7 +9,7 @@ const navLinks = [
   { label: "Chi Siamo", href: "#chi-siamo" },
   { label: "Corsi", href: "#corsi" },
   { label: "Contatti", href: "#contatti" },
-  { label: "Partite", href: "https://napolicampania-play-hub.lovable.app", external: true },
+  { label: "Partite", href: "https://partite.napolicampania.it", external: true },
 ];
 
 const Navbar = () => {
